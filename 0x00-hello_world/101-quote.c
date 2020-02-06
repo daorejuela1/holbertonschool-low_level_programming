@@ -3,11 +3,11 @@
  *
  * Return: Always 0 (Success)
  */
-#include <stdio.h>
+#include <unistd.h>
 int main(void)
 {
-	char my_message[] = "\"Programming is like building a multilingual puzzle";
+	char my_message[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	write(my_message);
+	write(2,my_message,59);
 	return (0);
 }
