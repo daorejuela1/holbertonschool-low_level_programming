@@ -7,7 +7,10 @@
  */
 int main(void)
 {
-	int x, y, z, z2, counter = 0, aux_counter, master = -1;
+	int x, z2, y, z;
+	int counter = 0;
+	int aux_counter;
+	int master = -1;
 
 	for (x = 0; x < 10; x++)
 	{
