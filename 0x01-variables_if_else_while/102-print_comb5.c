@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	int x, z2, y, z;
-	int counter = 0;
-	int aux_counter;
+	int x, z2, y, z, counter = 0, aux_counter;
 	int master = -1;
 
 	for (x = 0; x < 10; x++)
 	{
 		master++;
+		if (x == 9)
+			master = 0;
 		for (y = 0; y < 10; y++)
 		{
 			counter++;
