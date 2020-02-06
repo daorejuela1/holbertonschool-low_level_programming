@@ -33,14 +33,14 @@ int main(void)
 					}
 					else
 					{
-						putchar(48 + x);
-						putchar(48 + y);
-						putchar(48 + z);
-						if (x != 7 || y != 8 || z != 9)
-						{
-							putchar(44);
-							putchar(32);
-						}
+					putchar(48 + x);
+					putchar(48 + y);
+					putchar(48 + z);
+					if (x != 7 || y != 8 || z != 9)
+					{
+						putchar(44);
+						putchar(32);
+					}
 					}
 				}
 			}
