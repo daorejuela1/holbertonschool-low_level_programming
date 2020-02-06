@@ -15,8 +15,8 @@ int main(void)
 	{
 		for (y = 0; y < 10; y++)
 		{
-			putchar(48+x);
-			putchar(48+y);
+			putchar(48 + x);
+			putchar(48 + y);
 			if (x != 9 || y != 9)
 			{
 				putchar(44);
