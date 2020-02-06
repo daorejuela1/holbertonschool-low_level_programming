@@ -8,15 +8,12 @@
  */
 int main(void)
 {
-	int x;
-	int y;
-	int z;
-	int z2;
-	int counter = 0;
-	int aux_counter;
+	int x, y, z, z2, counter = 0, aux_counter, master = -1, aux_master;
 
 	for (x = 0; x < 10; x++)
 	{
+		master++;
+		aux_master = master;
 		for (y = 0; y < 10; y++)
 		{
 			counter++;
@@ -25,6 +22,8 @@ int main(void)
 				counter = 0;
 			for (z = 0; z < 10; z++)
 			{
+				if (z < aux_master)
+					continue;
 				for (z2 = 0; z2 < 10; z2++)
 				{
 				if (z2 < aux_counter)
