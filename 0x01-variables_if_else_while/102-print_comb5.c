@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-	int x, z2, y, z, counter = 0, aux_counter;
-	int master = -1, aux_master = 0;
+	int x, z2, y, z, counter = 0, aux_counter, master = -1;
 
 	for (x = 0; x < 10; x++)
 	{
