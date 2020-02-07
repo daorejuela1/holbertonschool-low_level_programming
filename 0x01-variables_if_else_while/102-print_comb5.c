@@ -18,7 +18,7 @@ int main(void)
 			counter++;
 			aux_counter = counter;
 			for (z = 0; z < 10; z++)
-			{		
+			{
 				if (z >= master)
 				{
 				for (z2 = 0; z2 < 10; z2++)
