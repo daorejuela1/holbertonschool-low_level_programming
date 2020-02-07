@@ -9,23 +9,22 @@ int main(void)
 {
 	int x, z2, y, z, counter = 0, aux_counter, master = -1;
 
-	for (x = 0; x < 10; x++)
+	for (x = 0; x < 11; x++)
 	{
-		master++;
+		master = master + 1;
+		counter = 0;
 		for (y = 0; y < 10; y++)
 		{
 			counter++;
 			aux_counter = counter;
-			if (y == 9)
-				counter = 0;
 			for (z = 0; z < 10; z++)
-			{
-				if (z < master)
-					continue;
+			{		
+				if (z >= master)
+				{
 				for (z2 = 0; z2 < 10; z2++)
 				{
-				if (z2 < aux_counter)
-					continue;
+				if (z2 >= aux_counter)
+				{
 				putchar(48 + x);
 				putchar(48 + y);
 				putchar(32);
@@ -36,8 +35,10 @@ int main(void)
 				putchar(44);
 				putchar(32);
 				}
+				}
 				if (z2 == 9)
 					aux_counter = 0;
+				}
 				}
 			}
 		}
