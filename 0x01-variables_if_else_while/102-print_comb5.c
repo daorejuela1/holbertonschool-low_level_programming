@@ -8,13 +8,11 @@
 int main(void)
 {
 	int x, z2, y, z, counter = 0, aux_counter;
-	int master = -1;
+	int master = -1, aux_master = 0;
 
 	for (x = 0; x < 10; x++)
 	{
 		master++;
-		if (x == 9)
-			master = 0;
 		for (y = 0; y < 10; y++)
 		{
 			counter++;
