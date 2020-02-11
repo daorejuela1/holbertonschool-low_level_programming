@@ -8,7 +8,7 @@
  */
 void print_to_98(int n)
 {
-	char total_count, i, contador;
+	int total_count, i, contador;
 
 	if (n > 98)
 		total_count = n - 98;
