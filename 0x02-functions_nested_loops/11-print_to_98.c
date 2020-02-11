@@ -14,18 +14,16 @@ void print_to_98(int n)
 		total_count = n - 98;
 	else
 		total_count = 98 - n;
-		contador = n;
-		for (i = 0; i <= total_count; i++)
-		{
-			printf("%d", contador);
-			if (i != total_count)
-			{
-				printf(", ");
-			}
-		if (n > 98)
-			contador--;
-		else
-			contador++;
-		}
-		printf("\n");
+	contador = n;
+	for (i = 0; i <= total_count; i++)
+	{
+		printf("%d", contador);
+		if (i != total_count)
+			printf(", ");
+	if (n > 98)
+		contador--;
+	else
+		contador++;
+	}
+	putchar('\n');
 }
