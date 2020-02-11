@@ -15,30 +15,27 @@ void times_table(void)
 		for (number = 0; number < 10; number++)
 		{
 			result = number * table_number;
-			if (result >= 10)
+			if ((number != 0) && (result >= 10))
 			{
+				_putchar(' ');
 				_putchar((result / 10) + '0');
 				_putchar((result % 10) + '0');
 			}
-			else
+			else if ((number != 0) && (result < 10))
 			{
-				_putchar((number * table_number) + '0');
-			}
-			if ((number != 9) && (result < 10))
-			{
-				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
-			}
-			else if ((number != 9) && (result >= 10))
-			{
-				_putchar(',');
-				_putchar(' ');
+				_putchar(result + '0');
 			}
 			else
 			{
+				_putchar(result + '0');
+			}
+			if (number == 9)
 				_putchar('\n');
-			}
+			else
+				_putchar(',');
+
 		}
 	}
 }
