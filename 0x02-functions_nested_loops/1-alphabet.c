@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * print_alphabet - writes the alphabet using _putchar
  *
