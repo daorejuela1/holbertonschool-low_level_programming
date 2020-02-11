@@ -23,10 +23,10 @@ void print_to_98(int n)
 			putchar(',');
 			putchar(' ');
 		}
-	if (n > 98)
-		contador--;
-	else
-		contador++;
+		if (n > 98)
+			contador--;
+		else
+			contador++;
 	}
 	putchar('\n');
 }
