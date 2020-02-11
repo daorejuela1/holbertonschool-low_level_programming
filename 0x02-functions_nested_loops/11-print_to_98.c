@@ -19,7 +19,10 @@ void print_to_98(int n)
 	{
 		printf("%d", contador);
 		if (i != total_count)
-			printf(", ");
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	if (n > 98)
 		contador--;
 	else
