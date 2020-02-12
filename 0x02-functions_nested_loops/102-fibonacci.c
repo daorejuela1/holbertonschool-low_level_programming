@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	long long unsigned int backup, i;
-	long long unsigned int memory = 1, fibo = 2;
+	unsigned long long int backup, i;
+	unsigned long long int memory = 1, fibo = 2;
 
 	printf("1, ");
 	printf("2, ");
