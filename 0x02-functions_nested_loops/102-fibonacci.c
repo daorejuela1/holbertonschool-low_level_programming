@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	unsigned long long int backup, i;
-	unsigned long long int memory = 1, fibo = 2;
+	unsigned long int backup, i;
+	unsigned long int memory = 1, fibo = 2;
 
 	printf("1, ");
 	printf("2, ");
@@ -18,9 +18,9 @@ int main(void)
 		fibo = fibo + memory;
 		memory = backup;
 		if (i != 47)
-			printf("%llu, ", fibo);
+			printf("%lu, ", fibo);
 		else
-			printf("%llu", fibo);
+			printf("%lu", fibo);
 	}
 	printf("\n");
 	return (0);
