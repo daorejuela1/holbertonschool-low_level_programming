@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <gmp.h>
+
 /**
  * main - check the code for Holberton School students.
  *
@@ -7,25 +7,21 @@
  */
 int main(void)
 {
-	int i;
-	mpz_t memory, backup, fibo;
+	long long unsigned int backup, i;
+	long long unsigned int memory = 1, fibo = 2;
 
-	mpz_init_set_str(fibo, "2", 10);
-	mpz_init_set_str(memory, "1", 10);
-	mpz_init(backup);
 	printf("1, ");
 	printf("2, ");
 	for (i = 0; i < 48; i++)
 	{
-		mpz_set(backup, fibo);
-		mpz_add(fibo, fibo, memory);
-		mpz_set(memory, backup);
+		backup = fibo;
+		fibo = fibo + memory;
+		memory = backup;
 		if (i != 47)
-			gmp_printf("%Zd, ", fibo);
+			printf("%llu, ", fibo);
 		else
-			gmp_printf("%Zd\n", fibo);
+			printf("%llu", fibo);
 	}
+	printf("\n");
 	return (0);
 }
-
-
