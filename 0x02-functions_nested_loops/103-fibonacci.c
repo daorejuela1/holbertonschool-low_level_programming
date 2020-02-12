@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	unsigned long long int backup, i, acumulator = 0;
-	unsigned long long int memory = 1, fibo = 2;
+	unsigned int backup, i, acumulator = 0;
+	unsigned int memory = 1, fibo = 2;
 
 	acumulator = acumulator + 2;
 	for (i = 0; i < 48; i++)
@@ -20,6 +20,6 @@ int main(void)
 			if (fibo % 2 == 0)
 				acumulator = acumulator + fibo;
 	}
-	printf("%llu\n", acumulator);
+	printf("%u\n", acumulator);
 	return (0);
 }
