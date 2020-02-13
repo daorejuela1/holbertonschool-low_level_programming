@@ -1,38 +1,56 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  *print_number - prinst an int number by using putchar
  *@n: input number
  *Return: None
  */
+int cal_digits(int n);
 void print_number(int n)
 {
-	int number = n;
+	int i = 0;
+	int num_digits;
 
-	if (number < 0)
+	if (n < 0)
 	{
-		number = number * -1;
+		n = n * -1;
 		_putchar('-');
 	}
-	if (number > 999)
+	num_digits = cal_digits(n);
+	for (i = num_digits; i >= 1; i /= 10)
 	{
-		_putchar(number / 1000 % 10 + '0');
-		_putchar(number / 100 % 10 + '0');
-		_putchar(number / 10 % 10 + '0');
-		_putchar(number % 10 + '0');
+		_putchar((n / i) % 10 + '0');
+		if (i == 1)
+			break;
 	}
-	else if (number > 99)
-	{
-		_putchar(number / 100 % 10 + '0');
-		_putchar(number / 10 % 10 + '0');
-		_putchar(number % 10 + '0');
-	}
-	else if (number > 9)
-	{
-		_putchar(number / 10 % 10 + '0');
-		_putchar(number % 10 + '0');
-	}
-	else
-	{
-		_putchar(number % 10 + '0');
-	}
+}
+
+/**
+ *cal_digits - prinst an int number by using putchar
+ *@n: input number
+ *Return: None
+ */
+int cal_digits(int n)
+{
+	if (n > 999999999)
+		return (1000000000);
+	else if (n > 99999999)
+		return (100000000);
+	else if (n > 9999999)
+		return (10000000);
+	else if (n > 999999)
+		return (1000000);
+	else if (n > 99999)
+		return (100000);
+	else if (n > 9999)
+		return (10000);
+	else if (n > 999)
+		return (1000);
+	else if (n > 99)
+		return (100);
+	else if (n > 9)
+		return (10);
+	else if (n >= 0)
+		return (1);
+	return (0);
 }
