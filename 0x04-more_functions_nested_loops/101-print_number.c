@@ -8,7 +8,7 @@
 int cal_digits(int n);
 void print_number(int n)
 {
-	int i = 0;
+	int i;
 	int num_digits;
 
 	if (n < 0)
@@ -50,7 +50,6 @@ int cal_digits(int n)
 		return (100);
 	else if (n > 9)
 		return (10);
-	else if (n >= 0)
+	else
 		return (1);
-	return (0);
 }
