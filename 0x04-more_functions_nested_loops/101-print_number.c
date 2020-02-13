@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  *print_number - prinst an int number by using putchar
  *@n: input number
@@ -12,7 +11,7 @@ void print_number(int n)
 	if (number < 0)
 	{
 		number = number * -1;
-		putchar('-');
+		_putchar('-');
 	}
 	if (number > 999)
 	{
