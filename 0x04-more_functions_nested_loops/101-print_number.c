@@ -5,21 +5,23 @@
  *@n: input number
  *Return: None
  */
-int cal_digits(int n);
+unsigned int cal_digits(unsigned int n);
 void print_number(int n)
 {
 	int i;
+	unsigned int handler;
 	int num_digits;
 
+	handler = n;
 	if (n < 0)
 	{
-		n = n * -1;
+		handler = handler * -1;
 		_putchar('-');
 	}
-	num_digits = cal_digits(n);
+	num_digits = cal_digits(handler);
 	for (i = num_digits; i >= 1; i /= 10)
 	{
-		_putchar((n / i) % 10 + '0');
+		_putchar((handler / i) % 10 + '0');
 		if (i == 1)
 			break;
 	}
@@ -30,7 +32,7 @@ void print_number(int n)
  *@n: input number
  *Return: None
  */
-int cal_digits(int n)
+unsigned int cal_digits(unsigned int n)
 {
 	if (n > 999999999)
 		return (1000000000);
