@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  *_atoi - function to transform from array to integer
  *@s: input string
@@ -6,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int tamano = 0, i, number = 0, sign = 1;
+	int tamano = 0, result, i, sign = 1;
+	unsigned long int number = 0;
 
 	for (tamano = 0; s[tamano] != 0; tamano++)
 	{
@@ -20,13 +22,18 @@ int _atoi(char *s)
 		if (s[i] >= 48 && s[i] <= 48 + 9)
 		{
 			number = number * 10 + s[i] - '0';
-			if (number < 0)
+			if (number >= 2147483647 && sign == 1)
 				number = 2147483647;
+			if (number >= 2147483648 && sign == -1)
+			{
+				number = 2147483648;
+			}
 		}
 		else if (number != 0)
 		{
 			break;
 		}
 	}
-	return (sign * number);
+	result = number;
+	return (sign * result);
 }
