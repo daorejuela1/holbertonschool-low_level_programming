@@ -20,6 +20,8 @@ int _atoi(char *s)
 		if (s[i] >= 48 && s[i] <= 48 + 9)
 		{
 			number = number * 10 + s[i] - '0';
+			if (number < 0)
+				number = 2147483647;
 		}
 		else if (number != 0)
 		{
