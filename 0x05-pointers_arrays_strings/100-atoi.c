@@ -13,14 +13,17 @@ int _atoi(char *s)
 		if (s[tamano] == '-')
 			sign = sign * -1;
 	}
-	for (i = tamano - 1; s[i] != 0; i++)
+	for (i = 0; s[i] != 0; i++)
 	{
 		if (s[i] >= 48 && s[i] <= 48 + 9)
 		{
 			number = number * 10 + s[i] - '0';
 		}
 		else if (number != 0)
+		{
+			number = number * sign;
 			break;
+		}
 	}
-	return (number * sign);
+	return (number);
 }
