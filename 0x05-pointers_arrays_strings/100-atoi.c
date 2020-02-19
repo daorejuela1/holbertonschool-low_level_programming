@@ -6,7 +6,7 @@
  */
 int _atoi(char *s)
 {
-	int tamano = 0, i, number_found = 0, number = 0, sign = 1;
+	int tamano = 0, i, number = 0, sign = 1;
 
 	for (tamano = 0; s[tamano] < 48 || s[tamano] > 57; tamano++)
 	{
