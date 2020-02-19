@@ -7,8 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int tamano = 0, result, i, sign = 1;
-	unsigned long int number = 0;
+	int tamano = 0, i, sign = 1;
+	unsigned int number = 0;
 
 	for (tamano = 0; s[tamano] != 0; tamano++)
 	{
@@ -22,18 +22,11 @@ int _atoi(char *s)
 		if (s[i] >= 48 && s[i] <= 48 + 9)
 		{
 			number = number * 10 + s[i] - '0';
-			if (number >= 2147483647 && sign == 1)
-				number = 2147483647;
-			if (number >= 2147483648 && sign == -1)
-			{
-				number = 2147483648;
-			}
 		}
 		else if (number != 0)
 		{
 			break;
 		}
 	}
-	result = number;
-	return (sign * result);
+	return (sign * number);
 }
