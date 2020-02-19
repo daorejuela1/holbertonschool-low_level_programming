@@ -10,9 +10,9 @@ int main(void)
 {
     int n;
 
-    n = _atoi("+++++aidfojaoifjñaofd--");
+    n = _atoi("98");
     printf("%d\n", n);
-    n = _atoi("901");
+    n = _atoi("-402");
     printf("%d\n", n);
     n = _atoi("          ------++++++-----+++++--98");
     printf("%d\n", n);
@@ -24,7 +24,7 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
     printf("%d\n", n);
-    n = _atoi("---++++ -++ Sui - te -   4029 #cisfun :)");
+    n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
     printf("%d\n", n);
     return (0);
 }
