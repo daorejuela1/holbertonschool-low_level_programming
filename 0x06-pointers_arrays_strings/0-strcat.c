@@ -16,7 +16,7 @@ char *_strcat(char *dest, char *src)
 	}
 	for (i = counter;  src[i - counter] != 0; i++)
 	{
-		* (dest + i) = * (src + i - counter);
+		*(dest + i) = *(src + i - counter);
 	}
 	return (dest);
 }

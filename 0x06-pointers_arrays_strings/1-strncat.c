@@ -17,7 +17,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	for (i = counter; i - counter < n; i++)
 	{
-		* (dest + i) = * (src + i - counter);
+		*(dest + i) = *(src + i - counter);
 	}
 	return (dest);
 }
