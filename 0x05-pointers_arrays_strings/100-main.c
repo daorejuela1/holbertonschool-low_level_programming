@@ -10,13 +10,7 @@ int main(void)
 {
     int n;
 
-    n = _atoi("98");
-    printf("%d\n", n);
-    n = _atoi("-402");
-    printf("%d\n", n);
-    n = _atoi("          ------++++++-----+++++--98");
-    printf("%d\n", n);
-    n = _atoi("214748364");
+    n = _atoi("-21474836482389");
     printf("%d\n", n);
     n = _atoi("0");
     printf("%d\n", n);
