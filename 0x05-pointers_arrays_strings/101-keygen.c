@@ -28,4 +28,5 @@ int main(void)
 		a[i] = valor;
 	}
 	printf("%s", a);
+	return (0);
 }
