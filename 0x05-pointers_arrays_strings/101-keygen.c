@@ -9,24 +9,23 @@
  */
 int main(void)
 {
-  char a[200];
-  int i, acum = 0, valor;
+	char a[200];
+	int i, acum = 0, valor;
 
-  srand (time(NULL));
-  for (i = 0; acum < 2772; i++)
-    {
-      if (acum < 2772 - 57)
+	srand(time(NULL));
+	for (i = 0; acum < 2772; i++)
 	{
-	 valor = rand() % (57 - 48) + 48;
-	 acum = acum + valor;
+		if (acum < 2772 - 57)
+		{
+			valor = rand() % (57 - 48) + 48;
+			acum = acum + valor;
+		}
+		else
+		{
+			valor = 2772 - acum;
+			acum = valor + acum;
+		}
+		a[i] = valor;
 	}
-      else
-	{
-	  valor = 2772 - acum;
-	  acum = valor + acum;
-	}
-      a[i] = valor;     
-    }
-  printf("%s", a);
-  
+	printf("%s", a);
 }
