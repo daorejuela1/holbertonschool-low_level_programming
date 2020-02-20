@@ -9,8 +9,8 @@
 char *rot13(char *s)
 {
 	int i, counter = 0;
-	char *original_letter = "abcdefghijklmnopqrstuvwxyz";
-	char *rot_replacement = "nopqrstuvwxyzabcdefghijklm";
+	char *original_letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *rot_replacement = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; s[i] != 0; i++)
 	{
