@@ -9,17 +9,17 @@
 char *rot13(char *s)
 {
 	int i, counter = 0;
-	char *original_letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *rot_replacement = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *or_letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *rot_replace = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; s[i] != 0; i++)
 	{
 		counter = 0;
-		while (original_letter[counter] != 0)
+		while (or_letter[counter] != 0)
 		{
-			if (s[i] == original_letter[counter])
+			if (s[i] == or_letter[counter])
 			{
-				s[i] = rot_replacement[counter];
+				s[i] = rot_replace[counter];
 				break;
 			}
 			counter++;
