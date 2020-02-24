@@ -8,14 +8,12 @@
  */
 char *_strchr(char *s, char c)
 {
-	char **pointer_to_s;
 	unsigned int i;
 
-	pointer_to_s = &s;
 	for (i = 0; s[i] != 0; i++)
 	{
-		if (*(*pointer_to_s + i) == c)
-			return (*pointer_to_s + i);
+		if (*(s + i) == c)
+			return (s + i);
 	}
 			return (NULL);
 }
