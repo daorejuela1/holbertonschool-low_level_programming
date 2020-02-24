@@ -14,7 +14,7 @@ char *_strchr(char *s, char c)
 	while (s[n] != 0)
 		n++;
 	pointer_to_s = &s;
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n - 1; i++)
 	{
 		if (*(*pointer_to_s + i) == c)
 			break;

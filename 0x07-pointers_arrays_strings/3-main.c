@@ -8,8 +8,8 @@
  */
 int main(void)
 {
-	char *s = "geek for geeks, orld";
-	char *f = "geeeek";
+	char *s = "hello, world";
+	char *f = "eloh";
 	unsigned int n;
 
 	n = _strspn(s, f);
