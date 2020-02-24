@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 
 	pointer_to_s = &s;
 	pointer_to_accept = &accept;
-	for (letter = 0; s[letter] != 0; letter++)
+	for (letter = 0; s[letter] != 0 && s[letter] != ' '; letter++)
 	{
 		for (search = 0; accept[search] != 0; search++)
 		{
