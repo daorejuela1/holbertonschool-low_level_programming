@@ -9,7 +9,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	char **pointer_to_s, **pointer_to_accept;
-	unsigned int letter, search, n = 0, m = 0, result = 0, sum_flag = 0;
+	unsigned int letter, search, n = 0, m = 0, result = 0;
 
 	while (s[n] != 0)
 		n++;
@@ -17,21 +17,15 @@ unsigned int _strspn(char *s, char *accept)
 		m++;
 	pointer_to_s = &s;
 	pointer_to_accept = &accept;
-	for (search = 0; search < m; search++)
+	for (letter = 0; letter < m; letter++)
 	{
-		for (letter = 0; letter < n; letter++)
+		for (search = 0; search < n; search++)
 		{
-			if (sum_flag == 1 && (*(*pointer_to_s + letter))
-					!= (*(*pointer_to_accept + search)))
-			{
-				sum_flag = 0;
-				break;
-			}
 			if (*(*pointer_to_s + letter)
-					== (*(*pointer_to_accept + search)))
+				== (*(*pointer_to_accept + search)))
 			{
-				sum_flag = 1;
 				result++;
+				break;
 			}
 		}
 	}
