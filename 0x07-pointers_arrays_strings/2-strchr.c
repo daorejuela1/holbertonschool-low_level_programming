@@ -18,7 +18,7 @@ char *_strchr(char *s, char c)
 	{
 		if (*(*pointer_to_s + i) == c)
 			break;
-		else if (*(*pointer_to_s + n - 1) != c)
+		else if (*(*pointer_to_s + i) != c && i == n - 1)
 			return (NULL);
 	}
 	return (*pointer_to_s + i);
