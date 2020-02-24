@@ -9,12 +9,10 @@
 char *_strchr(char *s, char c)
 {
 	char **pointer_to_s;
-	unsigned int i, n = 0;
+	unsigned int i;
 
-	while (s[n] != 0)
-		n++;
 	pointer_to_s = &s;
-	for (i = 0; i < n; i++)
+	for (i = 0; s[i] != 0; i++)
 	{
 		if (*(*pointer_to_s + i) == c)
 			return (*pointer_to_s + i);
