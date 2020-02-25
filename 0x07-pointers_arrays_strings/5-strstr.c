@@ -23,7 +23,10 @@ char *_strstr(char *haystack, char *needle)
 			search = 0;
 		}
 		if (search == max)
-			return (haystack + letter - max + 1);
+			break;
 	}
-	return (NULL);
+	if (search == max)
+			return (haystack + letter - max + 1);
+	else
+		return (NULL);
 }
