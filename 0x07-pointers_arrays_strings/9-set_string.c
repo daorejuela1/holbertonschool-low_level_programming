@@ -2,16 +2,11 @@
 /**
  *set_string -  pass value of s to to
  *@s: original string
- *@to: dest 
+ *@to: dest
  *Return: Nothing
  *
  */
 void set_string(char **s, char *to)
 {
-	int i;
-
-	for (i = 0; to[i] != 0; i++)
-	{
-		to[i] = 'a';
-	}
+	*s = to;
 }
