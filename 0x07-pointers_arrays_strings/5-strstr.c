@@ -26,7 +26,7 @@ char *_strstr(char *haystack, char *needle)
 			break;
 	}
 	if (search == max)
-		return (&haystack[letter - max]);
+		return (&haystack[letter - max - 1]);
 	else
 		return (NULL);
 }
