@@ -8,7 +8,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int letter = 0, search = 0, max = 0, n = 0;
+	unsigned int letter = 0, search = 0, max = 0;
 
 	while (needle[max] != 0)
 		max++;
