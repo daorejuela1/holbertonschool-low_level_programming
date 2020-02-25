@@ -8,10 +8,12 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int letter = 0, search = 1, max = 0;
+	unsigned int letter = 0, search = 0, max = 0;
 
 	while (needle[max] != 0)
 		max++;
+	if (max == 0)
+	  return(haystack);
 	for (letter = 0; haystack[letter] != 0; letter++)
 	{
 		if (haystack[letter] == needle[search])
