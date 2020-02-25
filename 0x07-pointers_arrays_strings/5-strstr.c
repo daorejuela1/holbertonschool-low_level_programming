@@ -1,0 +1,29 @@
+#include <stdio.h>
+/**
+ *_strstr -  search characters in dest array
+ *@haystack: original string
+ *@needle: search
+ *Return: array to first point
+ *character
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	unsigned int letter = 0, search = 0, max = 0, n = 0;
+
+	while (needle[max] != 0)
+		max++;
+	for (letter = 0; haystack[letter]; letter++)
+	{
+		if (haystack[letter] == needle[search])
+		{
+			search++;
+		}
+		else
+		{
+			search = 0;
+		}
+		if (search == max)
+			return (haystack + letter - max + 1);
+	}
+	return (NULL);
+}
