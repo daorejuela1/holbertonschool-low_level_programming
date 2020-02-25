@@ -12,7 +12,7 @@ char *_strstr(char *haystack, char *needle)
 
 	while (needle[max] != 0)
 		max++;
-	for (letter = 0; haystack[letter]; letter++)
+	for (letter = 0; haystack[letter] != 0; letter++)
 	{
 		if (haystack[letter] == needle[search])
 		{

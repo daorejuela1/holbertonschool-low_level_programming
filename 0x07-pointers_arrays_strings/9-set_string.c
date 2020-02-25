@@ -10,8 +10,8 @@ void set_string(char **s, char *to)
 {
 	int i;
 
-	for (i = 0; *s[i] != 0; i++)
+	for (i = 0; to[i] != 0; i++)
 	{
-		printf("ronda %c\n",*s[0]);
+		to[i] = 'a';
 	}
 }
