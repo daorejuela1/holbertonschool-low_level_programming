@@ -14,7 +14,7 @@ int main(void)
     printf("%d\n", r);
     r = is_prime_number(1024);
     printf("%d\n", r);
-    r = is_prime_number(16);
+    r = is_prime_number(0);
     printf("%d\n", r);
     r = is_prime_number(17);
     printf("%d\n", r);
