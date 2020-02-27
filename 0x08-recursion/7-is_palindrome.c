@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	int max = 0, result = 0;
 	char *b = s;
-	printf("Entrada original %s\n", s);
+
 	if (*s)
 		max = my_function(s, max);
 	else
@@ -26,13 +26,10 @@ int is_palindrome(char *s)
  *checkvalues - compare initial and end values of stream
  *@s: original string
  *@b: string backwards
- *@n: initial counter
- *@max: lenght of string
  *Return: 1 if is equal 0 if there is any difference
  */
 int checkvalues(char *s, char *b)
 {
-	printf("- CARAC %c \t %c\n",*s,*b);
 	if (s > b)
 		return (1);
 	else if (*s != *b)
