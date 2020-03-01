@@ -10,10 +10,12 @@
 int main(int argc, char *argv[])
 {
 	int result = 0, i;
+	char *endptr;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!isdigit(*argv[i]))
+		strtol(argv[i], &endptr, 10);
+		if (*endptr != '\0')
 		{
 			printf("Error\n");
 			return (1);
