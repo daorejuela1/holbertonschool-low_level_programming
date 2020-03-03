@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
- *strdup - creates a duplicate of a string
+ *_strdup - creates a duplicate of a string
  *@str: string to copy
  *
  *Return: duplicated string
@@ -13,7 +14,7 @@ char *_strdup(char *str)
 
 	if (*str == 0)
 		return (NULL);
-	array = (char *)malloc(sizeof(str));
+	array = (char *)malloc(strlen(str));
 	if (array == NULL)
 		return (NULL);
 	for (i = 0; str[i] != 0; i++)
