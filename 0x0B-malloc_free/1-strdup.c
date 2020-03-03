@@ -11,7 +11,7 @@ char *_strdup(char *str)
 	unsigned int i = 0, n = 0;
 	char *array;
 
-	if (*str == 0 || *str == NULL)
+	if (*str == 0 || str == NULL)
 		return (NULL);
 	while (str[n])
 		n++;
