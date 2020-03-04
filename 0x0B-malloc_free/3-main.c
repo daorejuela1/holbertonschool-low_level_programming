@@ -39,7 +39,7 @@ int main(void)
     int **grid;
 
     int x = 10;
-    int y = 10;
+    int y = 100;
     grid = alloc_grid(x, y);
     if (grid == NULL)
     {
