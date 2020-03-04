@@ -22,18 +22,18 @@ char *argstostr(int ac, char **av)
 	}
 	acum = acum + i;
 	array = (char *)malloc(count * sizeof(char));
-	printf("Total de caracters %d\n", acum);
 	if (array == NULL)
 		return (NULL);
 	for (row = 0; row < ac; row++)
 	{
 		while (av[row][count])
 		{
-			array[row * bu + count] = av[row][count];
+			array[bu + count] = av[row][count];
 			count++;
 		}
-		array[row * bu + count] = '\n';
-		bu = count + 1;
+		array[bu + count] = '\n';
+		bu = count + 1 + bu;
+		printf("El bu es de : %d\n", bu);
 		count = 0;
 	}
 	return (array);
