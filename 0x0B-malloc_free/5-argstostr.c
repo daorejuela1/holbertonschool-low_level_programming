@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 		count = 0;
 	}
 	acum = acum + i;
-	array = (char *)malloc(count * sizeof(char));
+	array = (char *)malloc(acum * sizeof(char));
 	if (array == NULL)
 		return (NULL);
 	for (row = 0; row < ac; row++)
