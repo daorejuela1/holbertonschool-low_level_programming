@@ -31,9 +31,9 @@ int **alloc_grid(int width, int height)
 		if (matrix[i] == NULL)
 			return (NULL);
 	}
-	for (row = 0; row < width; row++)
+	for (row = 0; row < reps2; row++)
 	{
-		for (col = 0; col < height; col++)
+		for (col = 0; col < reps; col++)
 		{
 			matrix[row][col] = 0;
 		}
