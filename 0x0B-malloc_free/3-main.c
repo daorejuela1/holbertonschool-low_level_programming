@@ -39,7 +39,7 @@ int main(void)
     int **grid;
 
     int x = 10;
-    int y = 100;
+    int y = 10;
     grid = alloc_grid(x, y);
     if (grid == NULL)
     {
@@ -47,7 +47,7 @@ int main(void)
     }
     print_grid(grid, x, y);
     printf("\n");
-    grid[0][3] = 98;
+    grid[0][3] = 99;
     grid[3][4] = 402;
     print_grid(grid, x, y);
     return (0);
