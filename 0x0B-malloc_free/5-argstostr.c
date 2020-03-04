@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *array;
-	int i = 0, row = 0, count = 0, acum = 0;
+	int i = 0, row = 0, count = 0, acum = 0, bu = 0;
 
 	if (ac == 0 || av  == NULL)
 		return (NULL);
@@ -29,10 +29,12 @@ char *argstostr(int ac, char **av)
 	{
 		while (av[row][count])
 		{
-			array[count] = av[row][count];
+			array[row * bu + count] = av[row][count];
 			count++;
 		}
-		array[count + 1] = '\n';
+		array[row * bu + count] = '\n';
+		bu = count + 1;
+		count = 0;
 	}
 	return (array);
 }
