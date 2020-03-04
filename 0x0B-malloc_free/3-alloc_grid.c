@@ -8,29 +8,20 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **matrix, i = 0, row = 0, col = 0, reps, reps2;
+	int **matrix, i = 0, row = 0, col = 0;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	if (width < height)
-	{
-		reps = height;
-		reps2 = width;
-	}
-	else
-	{
-		reps = width;
-		reps2 = height;
-	}
-	matrix = (int **)malloc(reps * sizeof(int *));
+	
+	matrix = (int **)malloc(height * sizeof(int *));
 	if (matrix == NULL)
 		return (NULL);
-	for (i = 0; i < reps; i++)
+	for (i = 0; i < height; i++)
 	{
-		matrix[i] = (int *)malloc(reps2 * sizeof(int));
+		matrix[i] = (int *)malloc(width * sizeof(int));
 		if (matrix[i] == NULL)
 		{
-			for (row = i; row >= 0; row--)
+			for (row = i - 1; row >= 0; row--)
 			{
 				free(matrix[row]);
 			}
@@ -38,9 +29,9 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for (row = 0; row < reps2; row++)
+	for (row = 0; row < height; row++)
 	{
-		for (col = 0; col < reps; col++)
+		for (col = 0; col < width; col++)
 		{
 			matrix[row][col] = 0;
 		}
