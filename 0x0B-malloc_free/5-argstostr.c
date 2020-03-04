@@ -33,7 +33,6 @@ char *argstostr(int ac, char **av)
 		}
 		array[bu + count] = '\n';
 		bu = count + 1 + bu;
-		printf("El bu es de : %d\n", bu);
 		count = 0;
 	}
 	return (array);
