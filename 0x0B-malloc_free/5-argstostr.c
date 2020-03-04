@@ -20,7 +20,7 @@ char *argstostr(int ac, char **av)
 		acum = count + acum;
 		count = 0;
 	}
-	acum = acum + i;
+	acum = acum + i + 1;
 	array = (char *)malloc(acum * sizeof(char));
 	if (array == NULL)
 		return (NULL);
