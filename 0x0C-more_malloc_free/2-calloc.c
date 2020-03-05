@@ -2,7 +2,7 @@
 /**
  *_calloc - using calloc with malloc
  *@nmemb: number of entries
- *@size: bytes of the entri
+ *@size: bytes of the entry
  *Return: 0
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -17,5 +17,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	for (i = 0; i < nmemb; i++)
 		pointer[i] = 0;
-	return ((void *)pointer);
+	return (pointer);
 }
