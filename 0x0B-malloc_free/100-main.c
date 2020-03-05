@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * print_tab - Prints an array of string
@@ -15,6 +16,8 @@ void print_tab(char **tab)
     for (i = 0; tab[i]; ++i)
     {
         printf("%s\n", tab[i]);
+	printf("La memoria ocupada es %lu\n", strlen(tab[i]));
+	printf("la longitud de i es:%d\n", i);
     }
 }
 
