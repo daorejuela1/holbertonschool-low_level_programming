@@ -16,6 +16,8 @@ char **strtow(char *str)
 	if (*str == 0 || str == NULL)
 		return (NULL);
 	datos =  return_size(str);
+	if (datos == 0)
+		return (NULL);
 	len_array = malloc(datos * sizeof(int));
 	if (len_array == NULL)
 		return (NULL);
