@@ -43,7 +43,7 @@ char **strtow(char *str)
 			n++;
 		}
 	}
-	matrix = (char **)malloc(datos * sizeof(char *));
+	matrix = (char **)malloc((datos + 1) * sizeof(char *));
 	if (matrix == NULL)
 		return (NULL);
 	for (i = 0; i < datos; i++)
