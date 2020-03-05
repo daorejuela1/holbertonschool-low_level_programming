@@ -8,15 +8,15 @@ char *_memset(char *s, char b, unsigned int n);
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *pointer;
+	char *pointer;
 
 	if (size <= 0 || nmemb <= 0)
 		return (NULL);
 	pointer = malloc(nmemb * size);
 	if (pointer == NULL)
 		return (NULL);
-	pointer = _memset(pointer, 0, nmemb);
-	return (pointer);
+	pointer = _memset(pointer, 0, nmemb * size);
+	return ((void *)pointer);
 }
 
 /**
