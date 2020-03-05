@@ -17,7 +17,11 @@ char **strtow(char *str)
 		return (NULL);
 	datos =  return_size(str);
 	len_array = malloc(datos * sizeof(int));
+	if (len_array == NULL)
+		return (NULL);
 	init_array = malloc(datos * sizeof(int));
+	if (init_array == NULL)
+		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] == ' ' && (str[i + 1] != ' ' && str[i + 1] != 0))
