@@ -65,7 +65,6 @@ char **strtow(char *str)
 		{
 			matrix[word][letter] = str[init_array[word] + letter];
 		}
-		matrix[word][letter] = 0;
 	}
 	matrix[word] = NULL;
 	free(init_array);
