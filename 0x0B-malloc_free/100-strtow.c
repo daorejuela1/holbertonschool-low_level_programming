@@ -43,12 +43,12 @@ char **strtow(char *str)
 			n++;
 		}
 	}
-	matrix = (char **)malloc(datos * sizeof(char *));
+	matrix = (char **)malloc(datos* sizeof(char *) + 1);
 	if (matrix == NULL)
 		return (NULL);
 	for (i = 0; i < datos; i++)
 	{
-		matrix[i] = (char *)malloc(len_array[i] * sizeof(char) + 2);
+		matrix[i] = (char *)malloc(len_array[i] * sizeof(char) + 1);
 		if (matrix[i] == NULL)
 		{
 			for (row = i - 1; row >= 0; row--)
