@@ -43,12 +43,12 @@ char **strtow(char *str)
 			n++;
 		}
 	}
-	matrix = (char **)malloc((datos + 1) * sizeof(char *));
+	matrix = (char **)malloc(datos * sizeof(char *));
 	if (matrix == NULL)
 		return (NULL);
 	for (i = 0; i < datos; i++)
 	{
-		matrix[i] = (char *)malloc(len_array[i] * sizeof(char) + 1);
+		matrix[i] = (char *)malloc(len_array[i] * sizeof(char));
 		if (matrix[i] == NULL)
 		{
 			for (row = i - 1; row >= 0; row--)
@@ -65,6 +65,7 @@ char **strtow(char *str)
 		{
 			matrix[word][letter] = str[init_array[word] + letter];
 		}
+		matrix[word][letter] = 0;
 	}
 	matrix[word] = NULL;
 	free(init_array);
