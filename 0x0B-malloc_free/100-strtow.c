@@ -40,6 +40,8 @@ char **strtow(char *str)
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == 0))
 		{
 			len_array[n] = cont - 1;
+			if (len_array[n] == 0)
+				return (NULL);
 			n++;
 		}
 	}
@@ -48,7 +50,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < datos; i++)
 	{
-		matrix[i] = (char *)malloc(len_array[i] * sizeof(char) + 2);
+		matrix[i] = (char *)malloc((len_array[i] + 1) * sizeof(char));
 		if (matrix[i] == NULL)
 		{
 			for (row = i - 1; row >= 0; row--)
