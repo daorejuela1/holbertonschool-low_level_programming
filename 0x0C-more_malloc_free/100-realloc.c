@@ -16,10 +16,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
-	else if (new_size == 0 && ptr == NULL)
-	{
-		return (NULL);
-	}
 	if (new_size == old_size)
 		return (ptr);
 	array = malloc(new_size * sizeof(char));
@@ -34,7 +30,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		minimum = new_size;
 	for (i = 0; i < minimum; i++)
 	{
-		if (((char *)ptr + i) != NULL)
 			array[i] = *((char *)ptr + i);
 	}
 	free(ptr);
