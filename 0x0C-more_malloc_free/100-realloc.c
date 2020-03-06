@@ -28,7 +28,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		minimum = old_size;
 	else
 		minimum = new_size;
-	for (i = 0; i < minimum; i++)
+	for (i = 0; i <= minimum; i++)
 	{
 			array[i] = *((char *)ptr + i);
 	}

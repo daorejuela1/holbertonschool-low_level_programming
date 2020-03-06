@@ -40,15 +40,23 @@ int main(void)
 {
     char *p;
     int i;
+    unsigned int old, new;
 
-    p = malloc(sizeof(char) * 98);
-    p = _realloc(p, sizeof(char) * 0, sizeof(char) * 8);
+	old = 5;
+	new = 10;
+    p = malloc(sizeof(char) * old);
+    p = _realloc(p, sizeof(char) * old, sizeof(char) * new);
     i = 0;
-    while (i < 8)
+    if (p == NULL)
+    {
+	printf("NULL\n");
+    	return (1);
+    }
+    while (i < (int) new)
     {
         p[i++] = 98;
     }
-    simple_print_buffer(p, 8);
+    simple_print_buffer(p, new);
     free(p);
     return (0);
 }
