@@ -10,7 +10,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *array;
 	unsigned int minimum, i;
-
+	if (ptr == NULL)
+		return (malloc(new_size * sizeof(char)));
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
