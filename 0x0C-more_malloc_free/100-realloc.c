@@ -11,15 +11,15 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *array;
 	unsigned int minimum, i;
 
-	if (ptr == NULL)
-		return (NULL);
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	if (new_size == 0)
+	else if (new_size == 0 && ptr == NULL)
+	{
 		return (NULL);
+	}
 	if (new_size == old_size)
 		return (ptr);
 	array = malloc(new_size * sizeof(char));
@@ -33,7 +33,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	else
 		minimum = new_size;
 	for (i = 0; i < minimum; i++)
-		array[i] = *((char *)ptr + i);
+	{
+		if (ptr + i != NULL)
+			array[i] = *((char *)ptr + i);
+	}
 	free(ptr);
 	return ((void *)array);
 }
