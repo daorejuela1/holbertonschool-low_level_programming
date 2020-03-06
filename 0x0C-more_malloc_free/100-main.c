@@ -41,14 +41,14 @@ int main(void)
     char *p;
     int i;
 
-    p = malloc(sizeof(char) * 10);
-    p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
+    p = malloc(sizeof(char) * 98);
+    p = _realloc(p, sizeof(char) * 0, sizeof(char) * 8);
     i = 0;
-    while (i < 98)
+    while (i < 8)
     {
         p[i++] = 98;
     }
-    simple_print_buffer(p, 98);
+    simple_print_buffer(p, 8);
     free(p);
     return (0);
 }
