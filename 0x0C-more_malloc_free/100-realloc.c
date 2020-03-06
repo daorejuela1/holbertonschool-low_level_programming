@@ -34,7 +34,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		minimum = new_size;
 	for (i = 0; i < minimum; i++)
 	{
-		if (ptr + i != NULL)
+		if (((char *)ptr + i) != NULL)
 			array[i] = *((char *)ptr + i);
 	}
 	free(ptr);
