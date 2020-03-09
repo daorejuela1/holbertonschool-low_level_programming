@@ -17,12 +17,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog == NULL)
 		return (NULL);
 	dog->name = _strndup(name);
-	if (dog->name == NULL)
-		return (NULL);
 	dog->age = age;
 	dog->owner = _strndup(owner);
-	if (dog->owner == NULL)
-		return (NULL);
 	return (dog);
 }
 
@@ -36,9 +32,11 @@ char *_strndup(char *input)
 {
 	int i = 0, n = 0;
 	char *output;
-
-	while (input[i])
-		i++;
+	if (input != NULL)
+		while (input[i])
+			i++;
+	else
+		return (NULL);
 	output = malloc(i + 1);
 	if (output == NULL)
 		return (NULL);
