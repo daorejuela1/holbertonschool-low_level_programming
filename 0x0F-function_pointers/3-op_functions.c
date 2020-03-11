@@ -4,7 +4,7 @@
  *op_add - adds two values
  *@a: first value
  *@b: second value
- *Result: sum result
+ *Return: sum result
  */
 int op_add(int a, int b)
 {
@@ -15,7 +15,7 @@ int op_add(int a, int b)
  *op_sub - substract value a - b
  *@a: first value
  *@b: second value
- *Result: substract result
+ *Return: substract result
  */
 int op_sub(int a, int b)
 {
@@ -43,20 +43,26 @@ int op_mul(int a, int b)
 int op_div(int a, int b)
 {
 	if (b == 0)
-		return (0);
-	return ( a / b);
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	return (a / b);
 }
 /**
  *op_mod - returns the mod between a and b
  *checks if b == 0
  *@a: denominator
  *@b: dividen
- *Result: reminder of a / b
+ *Return: reminder of a / b
  */
 int op_mod(int a, int b)
 {
 	if (b == 0)
-		return (0);
-	return ( a / b);
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	return (a % b);
 
 }
