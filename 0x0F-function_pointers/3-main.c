@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 
 	if (argc - 1 != 3)
 	{
-		printf("Error\n %d", argc);
+		printf("Error\n");
 		exit(98);
 	}
 	pointer_to_function = get_op_func(argv[2]);
-	if (pointer_to_function == NULL)
+	if (pointer_to_function == NULL || argv[1] == NULL || argv[3] == NULL)
 		return (0);
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
