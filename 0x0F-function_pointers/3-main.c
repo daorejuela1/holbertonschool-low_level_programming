@@ -16,6 +16,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+	if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*'
+			&&  *argv[2] != '/' &&  *argv[2] != '%')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	pointer_to_function = get_op_func(argv[2]);
 	if (pointer_to_function == NULL || argv[1] == NULL || argv[3] == NULL)
 		return (0);
