@@ -13,10 +13,10 @@ int main(void)
     list_t *head;
 
     head = NULL;
-    add_node(&head, "Alexandro");
     add_node(&head, NULL);
-    add_node(&head, "Augustin");
-    add_node(&head, "Bennett");
+    add_node(&head, NULL);
+    add_node(&head, "\n");
+    add_node(&head, "1");
     add_node(&head, "Bilal");
     add_node(&head, "Chandler");
     add_node(&head, "Damian");
