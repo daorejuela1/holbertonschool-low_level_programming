@@ -6,8 +6,14 @@
  */
 void free_list(list_t *head)
 {
-	if (head != NULL)
+	int i = 0;
+	void *tmp;
+
+	for (i = 0; head != NULL; i++)
 	{
-		free(head);
+		tmp = head;
+		free(head->str);
+		head = head->next;
+		free(tmp);
 	}
 }
