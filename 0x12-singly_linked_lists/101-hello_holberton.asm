@@ -8,4 +8,4 @@ _main:
     add     esp, 4
     ret
 message:
-    db  'Hello, Holberton', 10, 0
+    db  'Hello, Holberton\n', 10, 0
