@@ -1,19 +1,19 @@
 #include "lists.h"
 /**
- *get_nodeint_at_index - free list  and sets head to null
+ *get_nodeint_at_index - returns nth element of a list
  *@head: pointer to the first elements of the list
- *Return: Quantity of nodes in the list
+ *@index: position of the element that wants to be returned
+ *Return: Address of the element
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	void *tmp;
+	unsigned int i = 0;
 
-	if (head == NULL)
-		return;
-	while (*head != NULL)
+	for (i = 0; i < index ; i++)
 	{
-		tmp = *head;
-		*head = (*head)->next;
-		free(tmp);
+		if (head == NULL)
+			return (NULL);
+		head = head->next;
 	}
+	return (head);
 }
