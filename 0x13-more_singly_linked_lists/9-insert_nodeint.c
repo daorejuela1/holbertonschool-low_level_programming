@@ -11,12 +11,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = 0;
 	listint_t *new_node, *previous, *origin;
 
+	if (head == NULL)
+		return (NULL);
 	origin = *head;
 	for (i = 0; i < idx; i++)
 	{
-		previous = *head;
-		if (head == NULL)
+		if (*head == NULL)
+		{
+			*head = origin;
 			return (NULL);
+		}
+		previous = *head;
 		*head = (*head)->next;
 	}
 	new_node = malloc(sizeof(listint_t));
