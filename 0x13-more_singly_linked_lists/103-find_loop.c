@@ -6,16 +6,24 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *temp;
+	listint_t *temp1, *temp2;
 
-	while (head != NULL)
+	temp1 = head;
+	temp2 = head;
+	while (temp1 && temp2 && temp2->next)
 	{
-		temp = head;
-		head = head->next;
-		if (temp <= head)
+		temp1 = temp1->next;
+		temp2 = temp2->next->next;
+		if (temp1 == temp2)
 		{
-			break;
+			temp1 = head;
+			while (temp1 != temp2)
+			{
+				temp1 = temp1->next;
+				temp2 = temp2->next;
+			}
+			return ((void *)temp2);
 		}
 	}
-	return (head);
+	return (NULL);
 }
