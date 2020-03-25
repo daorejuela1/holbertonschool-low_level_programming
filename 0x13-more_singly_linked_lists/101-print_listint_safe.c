@@ -9,8 +9,6 @@ size_t print_listint_safe(const listint_t *head)
 	int i = 0, j = 0, k = 0, loop_found = 0;
 	const listint_t *array[1000];
 
-	if (head == NULL)
-		exit(98);
 	for (i = 0; head != NULL; i++)
 	{
 		if (loop_found == 1)
