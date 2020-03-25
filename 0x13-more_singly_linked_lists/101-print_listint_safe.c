@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (loop_found == 1)
 			break;
 		array[k] = head;
-		printf("%d\n", head->n);
+		printf("[%p] %d\n",(void *)head ,head->n);
 		head = head->next;
 		k++;
 		for (j = 0; j < k; j++)
