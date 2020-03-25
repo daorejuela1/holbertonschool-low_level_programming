@@ -12,7 +12,7 @@ listint_t *find_listint_loop(listint_t *head)
 	{
 		temp = head;
 		head = head->next;
-		if (temp <= head)
+		if (temp < head)
 		{
 			break;
 		}
