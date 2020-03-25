@@ -9,12 +9,12 @@ listint_t *find_listint_loop(listint_t *head)
 	const listint_t *temp;
 
 	if (head == NULL)
-		return (0);
+		return (NULL);
 	while (head != NULL)
 	{
 		temp = head;
 		head = head->next;
-		if (temp < head)
+		if (temp <= head)
 		{
 			break;
 		}
