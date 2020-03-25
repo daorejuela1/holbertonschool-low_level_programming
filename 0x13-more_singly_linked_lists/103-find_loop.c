@@ -8,8 +8,6 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	const listint_t *temp;
 
-	if (head == NULL)
-		return (NULL);
 	while (head != NULL)
 	{
 		temp = head;
@@ -19,5 +17,7 @@ listint_t *find_listint_loop(listint_t *head)
 			break;
 		}
 	}
+	if (head == NULL)
+		return (NULL);
 	return (head);
 }
