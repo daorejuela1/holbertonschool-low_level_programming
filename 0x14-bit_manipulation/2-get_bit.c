@@ -14,10 +14,7 @@ int get_bit(UREALONG n, unsigned int index)
 	int result = 0;
 
 	result = recursive_helper(n, index, counter);
-	if (result > 0)
-		return (result - 48);
-	else
-		return (-1);
+	return (result);
 }
 
 /**
@@ -31,10 +28,10 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter)
 {
 	int result;
 
-	if (counter == index)
-		return (n - 2 * (n >> 1) + '0');
 	if (n == 0)
 		return (-1);
+	if (counter == index)
+		return (n - 2 * (n >> 1));
 	result = recursive_helper(n >> 1, index, ++counter);
 	return (result);
 }
