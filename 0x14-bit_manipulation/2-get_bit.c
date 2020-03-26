@@ -13,7 +13,7 @@ int get_bit(UREALONG n, unsigned int index)
 	unsigned int counter = 0;
 	int result = 0;
 
-	if (n == 0)
+	if (n == 0 && index == 0)
 	{
 		return (result);
 	}
