@@ -14,13 +14,14 @@ int get_bit(UREALONG n, unsigned int index)
 	unsigned int counter = 0, bitnum = 0;
 	int result = 0;
 
+	if (n == 0)
+		bitnum++;
 	bitnum = get_bitsnumber(n, bitnum);
+	bitnum = bitnum - 1;
+	if (n == 0 && index == 0)
+		return (result);
 	if (index > bitnum)
 		return (-1);
-	if (n == 0 && index == 0)
-	{
-		return (result);
-	}
 	result = recursive_helper(n, index, counter);
 	return (result);
 }
