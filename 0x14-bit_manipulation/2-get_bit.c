@@ -32,10 +32,10 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter)
 {
 	int result;
 
+	if (counter == index && (n - 2 * (n >> 1) != 0))
+		return (n - 2 * (n >> 1));
 	if (n == 0)
 		return (-1);
-	if (counter == index)
-		return (n - 2 * (n >> 1));
 	result = recursive_helper(n >> 1, index, ++counter);
 	return (result);
 }

@@ -10,11 +10,11 @@ int main(void)
 {
     int n;
 
-    n = get_bit(1024, 10);
+    n = get_bit(256, 8);
     printf("%d\n", n);
-    n = get_bit(1, 0);
+    n = get_bit(2, 1);
     printf("%d\n", n);
-    n = get_bit(8, 3);
+    n = get_bit(255, 7);
     printf("%d\n", n);
     return (0);
 }
