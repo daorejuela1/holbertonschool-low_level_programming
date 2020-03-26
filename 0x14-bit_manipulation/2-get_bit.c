@@ -34,26 +34,7 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter)
 
 	if (counter == index)
 		return (n - 2 * (n >> 1));
-	if (n == 0)
-		return (-1);
 	result = recursive_helper(n >> 1, index, ++counter);
 	return (result);
 }
 
-/**
- *get_bitsnumber - gets the number of bits to represent a number
- *@n: input number
- *@counter: counter to find index
- *Return: Nothing but prints in stdout the binary series
- */
-int get_bitsnumber(UREALONG n, REALONG counter)
-{
-	int result;
-
-	if (counter == index)
-		return (n - 2 * (n >> 1));
-	if (n == 0)
-		return (-1);
-	result = recursive_helper(n >> 1, index, ++counter);
-	return (result);
-}
