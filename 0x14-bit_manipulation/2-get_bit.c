@@ -2,6 +2,7 @@
 #define REALONG unsigned int
 #define UREALONG unsigned long int
 int recursive_helper(UREALONG n, REALONG index, REALONG counter);
+int get_bitsnumber(UREALONG n, REALONG counter);
 /**
  *get_bit - gets bit in desired index
  *@n: input number
@@ -10,9 +11,12 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter);
  */
 int get_bit(UREALONG n, unsigned int index)
 {
-	unsigned int counter = 0;
+	unsigned int counter = 0, bitnum = 0;
 	int result = 0;
 
+	bitnum = get_bitsnumber(n, bitnum);
+	if (index > bitnum - 1)
+		return (-1);
 	if (n == 0 && index == 0)
 	{
 		return (result);
@@ -32,11 +36,23 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter)
 {
 	int result;
 
-	if (counter == index && n != 0)
+	if (counter == index)
 		return (n - 2 * (n >> 1));
-	if (n == 0)
-		return (-1);
 	result = recursive_helper(n >> 1, index, ++counter);
 	return (result);
 }
 
+/**
+ *get_bitsnumber - gets the number of bits to represent a number
+ *@n: input number
+ *@counter: counter to find index
+ *Return: Nothing but prints in stdout the binary series
+ */
+int get_bitsnumber(UREALONG n, REALONG counter)
+{
+	if (n == 0)
+	{
+		return (counter);
+	}
+	return (get_bitsnumber(n >> 1, counter + 1));
+}
