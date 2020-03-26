@@ -17,7 +17,7 @@ int get_bit(UREALONG n, unsigned int index)
 	if (n == 0)
 		bitnum++;
 	bitnum = get_bitsnumber(n, bitnum);
-	bitnum = bitnum - 1;
+	bitnum = bitnum;
 	if (n == 0 && index == 0)
 		return (result);
 	if (index > bitnum)
