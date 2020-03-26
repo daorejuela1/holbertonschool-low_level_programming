@@ -8,12 +8,12 @@ int recursive_helper(UREALONG n, REALONG index, REALONG counter);
  *@index: index of binary number
  *Return: Binary value at selected index
  */
-int get_bit(UREALONG n, unsigned int index)
+int get_bit(UREALONG n, REALONG index)
 {
-	unsigned int counter = 0;
+	REALONG counter = 0;
 	int result = 0;
 
-	if (index > (sizeof(unsigned long int) * 8) - 1)
+	if (index > (sizeof(UREALONG) * 8) - 1)
 		return (-1);
 	result = recursive_helper(n, index, counter);
 	return (result);
