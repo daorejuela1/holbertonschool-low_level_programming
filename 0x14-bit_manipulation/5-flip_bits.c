@@ -13,11 +13,10 @@ REALONG flip_bits(UREALONG n, UREALONG m)
 	int count = 0;
 
 	difference = n ^ m;
-	for (i = 0; i < (sizeof(UREALONG) * 8) - 1; i++)
+	for (i = 0; i < (sizeof(UREALONG) * 8); i++)
 	{
 		if ((difference >> i) & 1)
 			count++;
-
 	}
 	return (count);
 }
