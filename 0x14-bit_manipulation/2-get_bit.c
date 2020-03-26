@@ -13,6 +13,10 @@ int get_bit(UREALONG n, unsigned int index)
 	unsigned int counter = 0;
 	int result = 0;
 
+	if (n == 0)
+	{
+		return (result);
+	}
 	result = recursive_helper(n, index, counter);
 	return (result);
 }
