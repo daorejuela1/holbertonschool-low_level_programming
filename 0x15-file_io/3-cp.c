@@ -22,7 +22,7 @@ void close_secure(int file_to, int file_from)
 
 
 /**
- *main - cp
+ *main - cp one file to other
  *@argc: Quantity of arguments
  *@argv: Value of the arguments
  *Return: 0 if success
@@ -37,17 +37,17 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0666);
-	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	file_from = open(argv[1], O_RDWR);
+	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
+	}
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0666);
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
 	while (rd_error != 0)
 	{
