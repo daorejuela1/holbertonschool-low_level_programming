@@ -10,11 +10,13 @@ void close_secure(int file_to, int file_from)
 {
 	if (close(file_from) == -1)
 	{
+		close(file_to);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 	if (close(file_to) == -1)
 	{
+		close(file_from);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
