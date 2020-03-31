@@ -20,12 +20,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	rd_error = read(fd, buf, letters);
 	if (rd_error == -1)
+	{
+		free(buf);
 		return (0);
+	}
 	result = write(STDOUT_FILENO, buf, rd_error);
 	free(buf);
-	if (result != rd_error)
+	if (result != rd_error || result == -1)
 		return (0);
-	if (result == -1)
-		return (0);
+	close(fd);
 	return (result);
 }

@@ -18,7 +18,7 @@ int main(int ac, char **av)
     }
     n = read_textfile(av[1], 5);
     printf("\n(printed chars: %li)\n", n);
-    n = read_textfile(av[1], -1);
+    n = read_textfile(av[1], -10000);
     printf("\n(printed chars: %li)\n", n);
     return (0);
 }
