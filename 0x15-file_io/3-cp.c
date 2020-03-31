@@ -21,6 +21,24 @@ void close_secure(int file_to, int file_from)
 }
 
 /**
+ *check_null - securely close both files
+ *@file_to: pid first file
+ *@file_from: pid second file
+ *Return: 0 if success
+ */
+void check_null(char *file_to, char *file_from)
+{
+	if (file_from == NULL)
+	{
+		exit(98);
+	}
+	if (file_to == NULL)
+	{
+		exit(99);
+	}
+}
+
+/**
  *main - cp one file to other
  *@argc: Quantity of arguments
  *@argv: Value of the arguments
@@ -36,8 +54,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (argv[1] == argv[2])
-		return (0);
+	check_null(argv[1], argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
