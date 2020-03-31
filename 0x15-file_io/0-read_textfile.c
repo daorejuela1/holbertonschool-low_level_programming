@@ -23,6 +23,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	result = write(STDOUT_FILENO, buf, rd_error);
 	free(buf);
+	if (result != rd_error)
+		return (0);
 	if (result == -1)
 		return (0);
 	return (result);
