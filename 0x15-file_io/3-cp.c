@@ -20,7 +20,6 @@ void close_secure(int file_to, int file_from)
 	}
 }
 
-
 /**
  *main - cp one file to other
  *@argc: Quantity of arguments
@@ -37,6 +36,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	if (argv[1] == argv[2])
+		return (0);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
