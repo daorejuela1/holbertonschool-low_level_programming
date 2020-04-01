@@ -101,7 +101,7 @@ void first_print (char *buf)
 	}
 	printf("  Version:");
 	print_spaces(27);
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (version1[i].key == *(buf + 6))
 			printf("%s\n", version1[i].value);
