@@ -1,6 +1,6 @@
 #include "holberton.h"
 #define REV(x) ((x & 0x0F) << 4 | (x & 0xF0) >> 4)
-#define EV_CURRENT (*(buf + 6))
+#define EV_CURRENT 1
 /**
  *print_spaces - print n spaces
  *@n: number of spaces
