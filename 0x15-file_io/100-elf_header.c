@@ -1,5 +1,6 @@
 #include "holberton.h"
 #define REV(x) ((x & 0x0F) << 4 | (x & 0xF0) >> 4)
+#define EV_CURRENT (*(buf + 6))
 /**
  *print_spaces - print n spaces
  *@n: number of spaces
@@ -103,7 +104,7 @@ void first_print (char *buf)
 	print_spaces(27);
 	for (i = 0; i < 3; i++)
 	{
-		if (version1[i].key == *(buf + 6))
+		if (version1[i].key == EV_CURRENT)
 			printf("%s\n", version1[i].value);
 	}
 }
