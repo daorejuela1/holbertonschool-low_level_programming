@@ -103,7 +103,7 @@ void second_print (char *buf)
  */
 int main(int argc, char *argv[])
 {
-	int file_from, rd_error;
+	int file_from, rd_error, i;
 	char buf[30];
 
 	if (argc - 1 != 1)
@@ -132,8 +132,9 @@ int main(int argc, char *argv[])
 			second_print(buf);
 			printf("  Entry point address:");
 			print_spaces(15);
-			printf("0x%02x", (unsigned char)*(buf + 25));
-			printf("%02x", (unsigned char)*(buf + 24));
+			printf("0x");
+			for (i = 1; i > 0; i--)
+				printf("%02x", (unsigned char)*(buf + 25 - i));
 			printf("\n");
 			return (0);
 		}
