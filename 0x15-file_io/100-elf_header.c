@@ -74,7 +74,8 @@ void first_print (char *buf)
 	dict_classes class1 [] = {{2, "ELF64"}, {1, "ELF32"},};
 	dict_classes data1 [] = {{1, "2's complement, little endian"},
 		{2, "2's complement, big endian"},};
-	dict_classes version1 [] = {{0, "0 (invalid)"}, {1, "1 (current)"},};
+	dict_classes version1 [] = {{0, "0 (invalid)"}, {1, "1 (current)"},
+	{2, "1"},};
 
 	printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
