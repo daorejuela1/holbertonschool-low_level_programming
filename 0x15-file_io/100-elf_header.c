@@ -23,8 +23,8 @@ void first_print (char *buf)
 	int i;
 
 	dict_classes class1 [] = {{2, "ELF64"}, {1, "ELF32"},};
-	dict_classes data1 [] = {{2, "2's complement, little endian"},
-		{1, "2's complement, big endian"},};
+	dict_classes data1 [] = {{1, "2's complement, little endian"},
+		{2, "2's complement, big endian"},};
 	dict_classes version1 [] = {{0, "0 (invalid)"}, {1, "1 (current)"},};
 
 	printf("  Magic:   ");
@@ -103,21 +103,26 @@ void second_print (char *buf)
  */
 int main(int argc, char *argv[])
 {
-	int file_from;
-	char buf[1024];
+	int file_from, rd_error;
+	char buf[30];
 
 	if (argc - 1 != 1)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+		write(STDERR_FILENO, "Usage: elf_header elf_file\n", 28);
+		exit(98);
 	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		write(STDERR_FILENO, "Error: Not an RDO file\n", 24);
 		exit(98);
 	}
-	read(file_from, buf, 1024);
+	rd_error = read(file_from, buf, 30);
+	if (rd_error == -1)
+	{
+		write(STDERR_FILENO, "Error: Not an RDO file\n", 24);
+		exit(98);
+	}
 	if (*buf == 0x7F)
 	{
 		if (*(buf + 1) == 'E' && *(buf + 2) == 'L' && *(buf + 3) == 'F')
@@ -133,7 +138,6 @@ int main(int argc, char *argv[])
 			return (0);
 		}
 	}
-	dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+	write(STDERR_FILENO, "Error: Not an ELF file\n", 24);
 	exit(98);
-	return (0);
 }
