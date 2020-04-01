@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define REV(x) ((x & 0x0F) << 4 | (x & 0xF0) >> 4)
 /**
  *print_spaces - print n spaces
  *@n: number of spaces
@@ -11,6 +12,54 @@ void print_spaces(int n)
 	for (i = 0; i < n; i++)
 	{
 		printf(" ");
+	}
+}
+/**
+ *print_address - print address according to file formart
+ *@buf: data buffer
+ *Return: Nothing
+ */
+void print_address(char *buf)
+{
+	int i;
+	unsigned char letter;
+
+	if (*(buf + 5) == 1 && *(buf + 4) == 1)
+	{
+		printf("%x", REV((unsigned char)*(buf + 27)));
+		for (i = 0; i < 3; i++)
+		{
+			letter = (unsigned char)*(buf + 26 - i);
+			if (letter == 0)
+				printf("%02x", letter);
+			else
+				printf("%1x", letter);
+		}
+	}
+	else if (*(buf + 5) == 1 && *(buf + 4) == 2)
+	{
+		printf("%x", (unsigned char)*(buf + 26));
+		printf("%x", (unsigned char)*(buf + 27));
+		for (i = 0; i < 2; i++)
+		{
+			letter = (unsigned char)*(buf + 25 - i);
+			if (letter == 0)
+				printf("%02x", letter);
+			else
+				printf("%1x", letter);
+		}
+	}
+	else
+	{
+		printf("%x", REV((unsigned char)*(buf + 25)));
+		for (i = 0; i < 2; i++)
+		{
+			letter = (unsigned char)*(buf + 26 + i);
+			if (letter == 0)
+				printf("%02x", letter);
+			else
+				printf("%1x", letter);
+		}
 	}
 }
 /**
@@ -74,19 +123,25 @@ void second_print (char *buf)
 	{0xF, "AROS"}, {0x10, "Fenix OS"},
 	{0x11, "CloudABI"}, {0x12, "Stratus Technologies OpenVOS"},};
 
-	dict_classes type1[] = {{0, "NONE"}, {1, "REL (Relocatable file)"},
+	dict_classes type1[] = {{0, "EXEC (Executable file)"},
+	{1, "REL (Relocatable file)"},
 	{2, "EXEC (Executable file)"}, {3, "DYN (Shared object file)"},
 	{4, "CORE (Core file)"},};
 	printf("  OS/ABI:");
 	print_spaces(28);
-	for (i = 0; i < 18; i++)
+	for (i = 0; i < 19; i++)
 	{
 		if (abi1[i].key == *(buf + 7))
 			printf("UNIX - %s\n", abi1[i].value);
+		if (*(buf + 7) >= 19)
+		{
+			printf("<unknown: %2x>\n", *(buf + 7));
+			break;
+		}
 	}
 	printf("  ABI Version:");
 	print_spaces(23);
-	printf("%d\n", *(buf + 7));
+	printf("%d\n", *(buf + 8));
 	printf("  Type:");
 	print_spaces(30);
 	for (i = 0; i < 4; i++)
@@ -103,8 +158,8 @@ void second_print (char *buf)
  */
 int main(int argc, char *argv[])
 {
-	int file_from, rd_error, i;
-	char buf[30];
+	int file_from, rd_error;
+	char buf[100];
 
 	if (argc - 1 != 1)
 	{
@@ -117,7 +172,7 @@ int main(int argc, char *argv[])
 		write(STDERR_FILENO, "Error: Not an RDO file\n", 24);
 		exit(98);
 	}
-	rd_error = read(file_from, buf, 30);
+	rd_error = read(file_from, buf, 100);
 	if (rd_error == -1)
 	{
 		write(STDERR_FILENO, "Error: Not an RDO file\n", 24);
@@ -133,8 +188,7 @@ int main(int argc, char *argv[])
 			printf("  Entry point address:");
 			print_spaces(15);
 			printf("0x");
-			for (i = 1; i > 0; i--)
-				printf("%02x", (unsigned char)*(buf + 25 - i));
+			print_address(buf);
 			printf("\n");
 			return (0);
 		}
