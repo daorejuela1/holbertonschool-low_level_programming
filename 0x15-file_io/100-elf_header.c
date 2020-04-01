@@ -79,7 +79,9 @@ void first_print (char *buf)
 	printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
 	{
-		printf("%02x ", (unsigned char)*(buf + i));
+		printf("%02x", (unsigned char)*(buf + i));
+		if (i != 15)
+			printf(" ");
 	}
 	printf("\n");
 	printf("  Class:");
