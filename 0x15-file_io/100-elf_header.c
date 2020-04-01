@@ -1,6 +1,6 @@
 #include "holberton.h"
+#include "elf.h"
 #define REV(x) ((x & 0x0F) << 4 | (x & 0xF0) >> 4)
-#define EV_CURRENT 2
 /**
  *print_spaces - print n spaces
  *@n: number of spaces
@@ -76,7 +76,7 @@ void first_print (char *buf)
 	dict_classes data1 [] = {{1, "2's complement, little endian"},
 		{2, "2's complement, big endian"},};
 	dict_classes version1 [] = {{0, "0 (invalid)"}, {1, "1 (current)"},
-	{2, "2"},};
+	{2, "1"},};
 
 	printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
