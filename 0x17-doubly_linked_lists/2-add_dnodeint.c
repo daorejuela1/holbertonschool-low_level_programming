@@ -13,6 +13,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (head == NULL)
 		return (NULL);
 	new_node = add_node(n, (*head), NULL);
+	if (new_node == NULL)
+		return (NULL);
 	if ((*head) == NULL)
 		(*head) = new_node;
 	else
@@ -22,7 +24,13 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	return (new_node);
 }
-
+/**
+ * add_node - creates a new node
+ * @n: data for the new node
+ * @next: struct next address position
+ * @prev: struct prev address position
+ * Return: pointer to the new node
+ */
 dlistint_t *add_node(const int n, dlistint_t *next, dlistint_t *prev)
 {
 	dlistint_t *new_node = NULL;
