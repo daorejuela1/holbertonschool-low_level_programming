@@ -28,6 +28,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			break;
 		(*h) = (*h)->next;
 	}
+	if (idx == i)
+	{
+		(*h) = init_value;
+		return (add_dnodeint_end(h, n));
+	}
 	if (*h == NULL)
 	{
 		(*h) = init_value;
