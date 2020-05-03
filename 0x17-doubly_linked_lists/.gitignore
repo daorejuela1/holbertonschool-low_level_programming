@@ -3,3 +3,6 @@
 !*.md
 !*.h
 !.gitignore
+!102-result
+!100-password
+!103-keygen.c
