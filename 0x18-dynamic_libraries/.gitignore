@@ -1,0 +1,7 @@
+*
+!*.c
+!*.so
+!*.h
+!*.sh
+!.gitignore
+!*.md
