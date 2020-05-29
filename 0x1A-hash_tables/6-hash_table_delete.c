@@ -1,9 +1,9 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delete -
- *
- * Return:
+ * hash_table_delete - safely frees a hash table
+ * @ht: hash table to be freed
+ * Return: Nothing
  */
 void hash_table_delete(hash_table_t *ht)
 {
