@@ -16,7 +16,7 @@ int main(void)
 
     ht = hash_table_create(1024);
     hash_table_set(ht, "c", "fun");
-    hash_table_set(ht, "c", "awesome");
+    hash_table_set(ht, "python", "awesome");
     hash_table_set(ht, "Jennie", "and Jay love asm");
     hash_table_set(ht, "N", "queens");
     hash_table_set(ht, "Asterix", "Obelix");
@@ -36,5 +36,6 @@ int main(void)
     hash_table_set(ht, "hetairas", "Jennie Z Chu");
     hash_table_print(ht);
     hash_table_delete(ht);
+    return (EXIT_SUCCESS);
     return (EXIT_SUCCESS);
 }
