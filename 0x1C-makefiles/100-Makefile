@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): m.h $(OBJ)
 
-	$(CC) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 
 clean:
