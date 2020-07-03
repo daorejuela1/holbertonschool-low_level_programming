@@ -5,16 +5,17 @@ CC = gcc
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -pedantic
-.PHONY : all clean oclean fclean re # .PHONY are not the name of a file
+.PHONY : all clean oclean fclean re
 
 all: $(NAME)
 
 $(NAME): m.h $(OBJ)
 
-	$(CC) $(OBJ) -o $(NAME) # CFLAGS is automatically added
+	$(CC) $(OBJ) -o $(NAME)
+
 
 clean:
-	$(RM) *~ $(NAME) # RM default value is rm -f
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
