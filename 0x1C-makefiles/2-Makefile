@@ -1,11 +1,11 @@
 # -*- MakeFile -*-
 
-all: holberton
+NAME = holberton
+all: $(NAME)
 
 CC = gcc
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
-NAME = holberton
 
-holberton: $(OBJ) m.h
+$(NAME): $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
