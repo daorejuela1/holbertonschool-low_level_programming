@@ -21,4 +21,4 @@ fclean: clean oclean
 re: oclean $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)l
+	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)
