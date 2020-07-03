@@ -1,0 +1,24 @@
+# -*- MakeFile -*-
+
+NAME = holberton
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+RM =
+CFLAGS = -Wall -Werror -Wextra -pedanticc
+.PHONY : all clean oclean fclean re
+
+all: $(NAME)
+
+clean:
+	$(RM) rm -f *~ $(NAME)
+
+oclean:
+	$(RM) rm -f $(OBJ)
+
+fclean: clean oclean
+
+re: oclean $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)l
