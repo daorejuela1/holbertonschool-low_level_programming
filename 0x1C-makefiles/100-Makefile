@@ -6,17 +6,22 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY : all clean oclean fclean re
-#.PHONY Indicates that this rules are not the name of a file
+
+# .PHONY Indicates that this rules are not the name of a file
+
 all: $(NAME)
 
 $(NAME): m.h $(OBJ)
 
 	$(CC) $(OBJ) -o $(NAME)
-#CFLAGS is automatically added after the compiler
+
+# CFLAGS is automatically added after the compiler
 
 clean:
 	$(RM) *~ $(NAME)
-#RM default value is rm -f
+
+# RM default value is rm -f
+
 oclean:
 	$(RM) $(OBJ)
 
