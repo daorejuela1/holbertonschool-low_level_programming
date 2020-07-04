@@ -23,11 +23,10 @@ def island_perimeter(grid):
                 if (row[prev_val] == 0 and prev_val >= 0):
                     perimeter += 1
                 elif (prev_val < 0):
-                    perimeter +=1
-                try:
-                    if (row[next_val] == 0):
-                        perimeter += 1
-                except IndexError:
+                    perimeter += 1
+                if (next_val >= len(row)):
+                    perimeter += 1
+                elif (row[next_val] == 0):
                     perimeter += 1
     for i in range(num_col):
         column = [row[i] for row in grid]
@@ -38,10 +37,9 @@ def island_perimeter(grid):
                 if (column[prev_val] == 0 and prev_val >= 0):
                     perimeter += 1
                 elif (prev_val < 0):
-                    perimeter +=1
-                try:
-                    if (column[next_val] == 0):
-                        perimeter += 1
-                except IndexError:
+                    perimeter += 1
+                if next_val >= len(column):
+                    perimeter += 1
+                elif (column[next_val] == 0):
                     perimeter += 1
     return(perimeter)
