@@ -13,6 +13,8 @@ def island_perimeter(grid):
     perimeter = 0
     if not grid:
         return perimeter
+    if not grid[0]:
+        return perimeter
     for row in grid:
         num_col += 1
         for actual in range(1, len(row) - 1):
