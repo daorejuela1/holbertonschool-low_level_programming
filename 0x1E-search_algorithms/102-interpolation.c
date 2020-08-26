@@ -27,8 +27,10 @@ int interpolation_search(int *array, size_t size, int value)
 int recursive_binary(int low, int high, int value, int *list)
 {
 	size_t pivote;
+	double denominator;
 
-	pivote = low + (((double)(high - low) / (list[high] - list[low])) * (value - list[low]));
+	denominator = ((double)(high - low) / (list[high] - list[low]));
+	pivote = low + (denominator * (value - list[low]));
 	special_print(pivote, list, high);
 	if ((low == high && value != list[pivote]) || (int)pivote > high)
 		return (-1);
