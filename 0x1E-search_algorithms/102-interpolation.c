@@ -28,8 +28,7 @@ int recursive_binary(int low, int high, int value, int *list)
 {
 	size_t pivote;
 
-	pivote = (double)(high - low);
-	pivote = low + (pivote / (list[high] - list[low]) * (value - list[low]));
+	pivote = low + (((double)(high - low) / (list[high] - list[low])) * (value - list[low]));
 	special_print(pivote, list, high);
 	if ((low == high && value != list[pivote]) || (int)pivote > high)
 		return (-1);
