@@ -20,14 +20,19 @@ int jump_search(int *array, size_t size, int value)
 	{
 		low = i - m;
 		high = i;
-		special_print(i, array);
-		if (array[i] >= value)
+		if (array[high] < value)
+		{
+			special_print(i, array);
+		}
+		else if (array[high] >= value)
 		{
 			printf("Value found between indexes [%d] and [%d]\n", low, high);
 			found = linear_search_ord(low, high, value, array);
 			return (found);
 		}
 	}
+	printf("Value found between indexes [%d] and [%d]\n", high, i);
+	found = linear_search_ord(high, (int)size - 1, value, array);
 	return (found);
 }
 
