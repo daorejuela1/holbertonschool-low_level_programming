@@ -39,10 +39,6 @@ int recursive_binary(int low, int high, int value, int *list)
 	{
 		pivote = recursive_binary(low, pivote - 1, value, list);
 	}
-	else if (pivote != 0 && value == list[pivote] && list[pivote - 1] != value)
-	{
-		return (pivote);
-	}
 	else if (pivote != 0 && list[pivote - 1] == value)
 	{
 		pivote = recursive_binary(low, pivote, value, list);
